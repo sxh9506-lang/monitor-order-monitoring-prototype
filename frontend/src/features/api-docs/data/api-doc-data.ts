@@ -17,11 +17,16 @@ export interface DocSection {
   prose?: string[]; endpoints?: Endpoint[]; tables?: DocTable[]; code?: { title?: string; lang: string; src: string }[];
 }
 
+const RUNTIME_ORIGIN =
+  typeof window !== "undefined" && window.location?.origin
+    ? window.location.origin
+    : "https://monitor.internal";
+
 export const docMeta = {
   title: "Monitor Server API",
   version: "v1.4.0",
   date: "2026-09-03",
-  base: "https://monitor.internal",
+  base: RUNTIME_ORIGIN,
   status: "评审稿",
   stats: { modules: 11, endpoints: 0, roles: 5, slo: "P99 ≤ 300ms" },
 };

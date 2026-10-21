@@ -1,0 +1,16 @@
+{
+  "name": "monitor-order-monitoring-platform",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "description": "Monitor 多业务线订单监控平台（React 19 前端 + Vercel Serverless / Spring Boot API）",
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "build": "npm --prefix frontend install --no-audit --no-fund && npm --prefix frontend run build",
+    "dev": "npm --prefix frontend run dev",
+    "preview": "npm --prefix frontend run preview",
+    "typecheck": "npm --prefix frontend run typecheck"
+  }
+}

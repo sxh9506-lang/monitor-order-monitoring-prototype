@@ -1,0 +1,8 @@
+backend/
+sdk/
+business-system-demo/
+deploy/
+docs/assets/
+scripts/
+*.md
+!README.md
