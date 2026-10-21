@@ -111,3 +111,17 @@ curl -s http://localhost:8080/api/v1/sentinel/bootstrap -H "Authorization: Beare
 ## License
 
 [Apache License 2.0](LICENSE)
+
+## 部署到 Vercel
+
+本仓库已配置 Vercel 部署（根目录 `vercel.json` + `package.json`，前端构建产物为
+`frontend/dist`，`api/index.js` 提供与 Spring Boot demo 数据同源的 Serverless API）。
+
+首次部署前需在 Vercel 账号中添加 GitHub Login Connection
+（Vercel Dashboard → Settings → Login Connections → GitHub），
+否则从 Git 仓库创建 Deployment 会失败并报 `git_info_fail`
+（Git information retrieval failed）。绑定后重新部署分支
+`arena/80664fef-monitor-order-monitoring-proto` 即可。
+
+生产环境（Spring Boot + ClickHouse + Kafka + Redis）仍走 K8s，见上方部署手册；
+Vercel 上的 Serverless API 仅用于原型演示数据。
